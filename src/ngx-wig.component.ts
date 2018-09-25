@@ -89,7 +89,7 @@ export class NgxWigComponent implements OnInit, OnChanges, ControlValueAccessor 
     // use insertHtml for `createlink` command to account for IE/Edge purposes, in case there is no selection
     let selection = document.getSelection().toString();
     if (command === 'createlink' && selection === '') {
-      document.execCommand('insertHtml', false, '<a href="' + options + '">' + options + '</a>');
+      document.execCommand('insertHtml', false, '<a href="' + options + '" target="_blank">' + options + '</a>');
     } else {
       document.execCommand(command, false, options);
     }
